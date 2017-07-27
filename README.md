@@ -12,7 +12,7 @@ This repository will hold playbooks that can be run as post-provisioning tasks f
 ## Playbooks  
 
 ### register_satellite6  
-Register a newly provisioned VM with an existing Satellite 6 using the activation key provided
+Register a newly provisioned VM with an existing Satellite 6 using the activation key provided  
 Requires an activation key that has previously been created in Satellite 6. This activation key can be injected in a variety of ways but in this instance we will ask the users to enter the name in the CloudForms service dialog
 
 
