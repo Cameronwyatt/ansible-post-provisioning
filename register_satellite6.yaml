@@ -1,0 +1,17 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: Download the katello key
+      get_url:
+        url: "https://{{ satellite6_hostname }}/pub/katello-ca-consumer-latest.noarch.rpm"
+        dest: /tmp/katello-ca-consumer-latest.noarch.rpm
+        mode: 0500
+
+    - name: Install katello key
+      shell: rpm -Uvh /tmp/katello-ca-consumer-latest.noarch.rpm
+
+    - name: Register host with Satellite
+      redhat_subscription:
+        state: present
+        activationkey: "{{ activation_key }}"
